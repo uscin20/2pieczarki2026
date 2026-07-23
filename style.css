@@ -61,14 +61,12 @@ body {
   padding: 16px;
 }
 
-.kafelek {
-    border: 5px solid grey;
-    border-radius: 8px;
-    padding: 5px;
-    margin: 10px;
-}
 img {
     height: 200px;
     margin-left: auto;
     margin-right: auto;
+    border: 5px solid grey;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 10px;
 }
