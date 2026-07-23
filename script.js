@@ -1,25 +1,23 @@
-const photos = document.querySelectorAll(".photo img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const closeBtn = document.querySelector(".close");
+<script>
+const tiles = document.querySelectorAll(".tile img");
+const overlay = document.getElementById("overlay");
+const fullImage = document.getElementById("fullImage");
+const close = document.getElementById("close");
 
-photos.forEach(photo => {
-    photo.addEventListener("click", () => {
-        lightbox.classList.add("active");
-        lightboxImg.src = photo.src;
+tiles.forEach(img => {
+    img.addEventListener("click", function () {
+        fullImage.src = this.src;
+        overlay.classList.add("active");
     });
 });
 
-closeBtn.onclick = () => lightbox.classList.remove("active");
+close.addEventListener("click", function () {
+    overlay.classList.remove("active");
+});
 
-lightbox.onclick = e => {
-    if(e.target !== lightboxImg){
-        lightbox.classList.remove("active");
-    }
-};
-
-document.addEventListener("keydown", e => {
-    if(e.key === "Escape"){
-        lightbox.classList.remove("active");
+overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) {
+        overlay.classList.remove("active");
     }
 });
+</script>
